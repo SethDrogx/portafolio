@@ -15,42 +15,38 @@ window.onload = mostrarBarras;
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Selecciona el formulario
-    const formulario = document.querySelector('.formulario-contacto');
+    const btnEnviar = document.querySelector('.btn-enviar');
     
-    // Agrega un listener para el evento 'submit' del formulario
-    formulario.addEventListener('submit', function(event) {
-        // Evita que se envíe el formulario por defecto
+    
+    btnEnviar.addEventListener('click', function(event) {
         event.preventDefault();
-        
-        // Recogemos los datos del formulario
-        const formData = new FormData (formulario);
-        
-        // Envíamos los datos a enviar_formulario.php usando AJAX
-        fetch('enviar_formulario.php',{
-            method: 'POST',
-            body:formData
-        })
-        .then(response=>{
-            if(response.ok){
-                return response.text();
-            }
-            throw new Error('Error en la respuesta del servidor.');
-        })
-        .then(data =>{
-            Swal.fire({
-                title: "¡Gracias!",
-                text: "Aprecio que se ponga en contacto; su mensaje fue enviado",
-                icon: "success"
-            });
-        })
-        .catch(error =>{
+
+        const nombre = document.getElementById('nombre').value.trim();
+        const apellido = document.getElementById('apellido').value.trim();
+        const correo = document.getElementById('correo').value.trim();
+        const telefono = document.getElementById('telefono').value.trim();
+        const mensaje = document.getElementById('mensaje').value.trim();
+
+        if(nombre === '' || apellido === '' || correo === '' || mensaje === ''){
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Parece que algo salió mal"
+                text: "Debes llenar todos los campos",
+              });
+        }else{
+            Swal.fire({
+                title: "¡Gracias!",
+                text: "Aprecio que se ponga en contacto; su mensaje fue enviado",
+                icon: "success",
+            }).then((result) =>{
+                if(result.isConfirmed){
+                    document.getElementById('nombre').value = '';
+                    document.getElementById('apellido').value = '';
+                    document.getElementById('correo').value = '';
+                    document.getElementById('telefono').value = '';
+                    document.getElementById('mensaje').value = '';
+                }
             });
-            console.error('Error',error);
-        })
+        }
     });
 });
