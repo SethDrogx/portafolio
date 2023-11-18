@@ -24,7 +24,7 @@
                             <a class="nav-link" href="index.html">Información personal</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Proyectos</a>
+                            <a class="nav-link" href="index.html#mis-proyectos">Proyectos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#habilidades">Habilidades</a>
@@ -39,7 +39,7 @@
     </header><br>
     
     <section class="habilidades-section"><br>
-        <strong><h2 class="animacion-texto">Mis Habilidades</h2></strong>
+        <strong><h2 class="animacion-texto" id="habilidades">Mis Habilidades</h2></strong>
         <div class="ecualizador">
             <div class="barra">
                 <div class="progresso" data-valor="85">Creatividad</div>
@@ -69,34 +69,34 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
                 <div class="neon">
-                    <section class="fondo" id="informacionPerso">
+                    <section class="fondo" id="Contacto">
                         <div class="text-container">
                             <div class="container mt-5">
                                 <h2 class="text-center mb-4">Formulario de Contacto</h2>
-                                <form class="formulario-contacto">
+                                <form class="formulario-contacto" action="enviar_formulario.php" method="post">
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="inputNombre">Nombre</label>
-                                            <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+                                            <label for="nombre">Nombre</label>
+                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="inputApellido">Apellido</label>
-                                            <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+                                            <label for="apellido">Apellido</label>
+                                            <input type="text" class="form-control" id="apellido" placeholder="Apellido">
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="inputEmail">Correo Electrónico</label>
-                                            <input type="email" class="form-control" id="inputEmail" placeholder="Correo Electrónico">
+                                            <label for="correo">Correo Electrónico</label>
+                                            <input type="email" class="form-control" id="correo" placeholder="Correo Electrónico">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="inputTelefono">Teléfono</label>
-                                            <input type="tel" class="form-control" id="inputTelefono" placeholder="Teléfono">
+                                            <label for="telefono">Teléfono</label>
+                                            <input type="tel" class="form-control" id="telefono" placeholder="Teléfono">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputMensaje">Mensaje</label>
-                                        <textarea class="form-control" id="inputMensaje" rows="5" placeholder="Escribe tu mensaje aquí"></textarea>
+                                        <label for="mensaje">Mensaje</label>
+                                        <textarea class="form-control" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí"></textarea>
                                     </div>
                                     <center><button type="submit" class="btn btn-primary btn-enviar">Enviar Mensaje</button></center>
                                 </form>
