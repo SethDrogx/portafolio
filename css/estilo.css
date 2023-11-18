@@ -36,6 +36,12 @@ body{
 .navbar-icon{
     font-size: 20px;
 }
+p{
+    text-align: justify;
+}
+.card-title{
+    text-align: center;
+}
 
 
 @keyframes animacionNeon {
@@ -61,4 +67,56 @@ body{
     .fondo img{
         grid-column: 1;
     }
+}
+
+/*contendor que muestra la imagen*/
+.contenedor-emergente {
+    position: fixed;
+    top: 5%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fondo difuminado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.imagen-emergente {
+    max-width: 90%;
+    max-height: 90%;
+    transition: transform 0.3s;
+}
+
+.contenedor-emergente.mostrar {
+    opacity: 1;
+}
+
+.contenedor-emergente.mostrar .imagen-emergente {
+    transform: scale(1);
+}
+
+/* Estilo para el botón "Ver Imagen" */
+.btn-ver-imagen {
+    background-color: #800080; /* Color inicial (morado) */
+    transition: background-color 0.7s ease; /* Transición suave de 0.3 segundos */
+}
+
+/* Estilo para el botón "Ver Imagen" al pasar el cursor sobre él */
+.btn-ver-imagen:hover {
+    background-color: #ffffff; /* Cambio de color al pasar el cursor (blanco) */
+}
+
+.desvanecer{
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.aparecer {
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
